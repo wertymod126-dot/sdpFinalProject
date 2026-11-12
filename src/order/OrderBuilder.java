@@ -5,10 +5,6 @@ import meal.Meal;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Builder pattern: assembles an Order step by step and validates it
- * in build(), instead of using a constructor with many optional parameters.
- */
 public class OrderBuilder {
     String customerName;
     OrderType type = OrderType.DINE_IN;

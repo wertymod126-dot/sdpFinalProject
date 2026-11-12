@@ -2,13 +2,10 @@ package order;
 
 import meal.Meal;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * An order placed by a customer. Instances are created only through
- * OrderBuilder, so an Order is always complete and valid.
- */
 public class Order {
     private static int nextId = 1;
 
@@ -20,6 +17,7 @@ public class Order {
     private final String notes;
     private final List<Meal> meals;
     private OrderStatus status;
+    private final List<OrderObserver> observers = new ArrayList<>();
 
     Order(OrderBuilder builder) {
         this.id = nextId++;
@@ -64,11 +62,44 @@ public class Order {
         return status;
     }
 
-    public void setStatus(OrderStatus status) {
-        this.status = status;
+    public void addObserver(OrderObserver observer) {
+        if (observer != null && !observers.contains(observer)) {
+            observers.add(observer);
+        }
     }
 
-    /** Sum of all meal prices, before any discount is applied. */
+    public void removeObserver(OrderObserver observer) {
+        observers.remove(observer);
+    }
+
+    public void announcePlaced() {
+        notifyObservers(null, status);
+    }
+
+    public void advance() {
+        OrderStatus[] all = OrderStatus.values();
+        if (status.ordinal() == all.length - 1) {
+            throw new IllegalStateException("Order #" + id + " is already " + status);
+        }
+        setStatus(all[status.ordinal() + 1]);
+    }
+
+    public void setStatus(OrderStatus newStatus) {
+        if (newStatus == null || newStatus.ordinal() != status.ordinal() + 1) {
+            throw new IllegalStateException(
+                    "Order #" + id + " cannot go from " + status + " to " + newStatus);
+        }
+        OrderStatus previous = this.status;
+        this.status = newStatus;
+        notifyObservers(previous, newStatus);
+    }
+
+    private void notifyObservers(OrderStatus previous, OrderStatus current) {
+        for (OrderObserver observer : new ArrayList<>(observers)) {
+            observer.onStatusChanged(this, previous, current);
+        }
+    }
+
     public double getSubtotal() {
         double sum = 0;
         for (Meal meal : meals) {

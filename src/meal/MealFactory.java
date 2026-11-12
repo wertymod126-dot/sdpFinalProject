@@ -1,10 +1,5 @@
 package meal;
 
-/**
- * Factory pattern: the only place that knows which concrete class
- * belongs to which meal type. Client code asks for a MealType and
- * works with the Meal interface.
- */
 public class MealFactory {
 
     public Meal createMeal(MealType type) {
