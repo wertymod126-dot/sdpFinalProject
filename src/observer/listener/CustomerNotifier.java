@@ -1,9 +1,9 @@
-package notification;
+package observer.listener;
 
-import order.Order;
-import order.OrderObserver;
-import order.OrderStatus;
-import order.OrderType;
+import builder.Order;
+import observer.OrderObserver;
+import builder.OrderStatus;
+import builder.OrderType;
 
 public class CustomerNotifier implements OrderObserver {
     @Override

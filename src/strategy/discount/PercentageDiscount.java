@@ -1,4 +1,6 @@
-package pricing;
+package strategy.discount;
+
+import strategy.DiscountStrategy;
 
 public class PercentageDiscount implements DiscountStrategy {
     private static final int FULL_PERCENT = 100;
