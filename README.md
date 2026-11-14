@@ -92,41 +92,6 @@ apply(subtotal)
 total
 receipt
 Main - console client
-Project structure
-src
-├── Main.java                         Console client (menu and demo scenario)
-├── facade
-│   └── RestaurantFacade.java         Facade
-├── factory
-│   ├── MealFactory.java              Factory
-│   ├── MealType.java
-│   └── meal
-│       ├── Meal.java                 Common interface (Decorator component)
-│       ├── Pizza.java
-│       ├── Burger.java
-│       ├── Salad.java
-│       └── Drink.java
-├── builder
-│   ├── OrderBuilder.java             Builder
-│   ├── Order.java                    Product and Observer subject
-│   ├── OrderStatus.java
-│   └── OrderType.java
-├── decorator
-│   ├── ToppingDecorator.java         Abstract decorator
-│   └── topping
-│       ├── ExtraCheese.java
-│       ├── Mushrooms.java
-│       └── Bacon.java
-├── observer
-│   ├── OrderObserver.java            Observer interface
-│   └── listener
-│       ├── KitchenDisplay.java
-│       └── CustomerNotifier.java
-└── strategy
-    ├── DiscountStrategy.java         Strategy interface
-    └── discount
-        ├── NoDiscount.java
-        └── PercentageDiscount.java
 Getting started
 
 Requirements: JDK 16 or newer. There are no external dependencies.
