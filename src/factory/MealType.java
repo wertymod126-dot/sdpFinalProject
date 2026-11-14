@@ -1,4 +1,4 @@
-package meal;
+package factory;
 
 public enum MealType {
     PIZZA,

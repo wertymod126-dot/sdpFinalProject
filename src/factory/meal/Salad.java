@@ -1,13 +1,13 @@
-package meal;
+package factory.meal;
 
-public class Burger implements Meal {
+public class Salad implements Meal {
     @Override
     public String getDescription() {
-        return "Burger";
+        return "Salad";
     }
 
     @Override
     public double getCost() {
-        return 6.00;
+        return 4.50;
     }
 }

@@ -1,4 +1,4 @@
-package order;
+package builder;
 
 public enum OrderType {
     DINE_IN,

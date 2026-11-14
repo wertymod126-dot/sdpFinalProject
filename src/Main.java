@@ -1,5 +1,5 @@
 import facade.RestaurantFacade;
-import order.OrderType;
+import builder.OrderType;
 
 import java.util.Arrays;
 import java.util.List;

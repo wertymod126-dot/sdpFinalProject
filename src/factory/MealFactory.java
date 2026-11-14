@@ -1,4 +1,10 @@
-package meal;
+package factory;
+
+import factory.meal.Burger;
+import factory.meal.Drink;
+import factory.meal.Meal;
+import factory.meal.Pizza;
+import factory.meal.Salad;
 
 public class MealFactory {
 

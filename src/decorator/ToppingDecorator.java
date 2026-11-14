@@ -1,6 +1,6 @@
-package topping;
+package decorator;
 
-import meal.Meal;
+import factory.meal.Meal;
 
 public abstract class ToppingDecorator implements Meal {
     protected final Meal meal;
