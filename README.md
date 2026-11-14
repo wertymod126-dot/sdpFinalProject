@@ -92,6 +92,7 @@ apply(subtotal)
 total
 receipt
 Main - console client
+
 Getting started
 
 Requirements: JDK 16 or newer. There are no external dependencies.
