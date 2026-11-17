@@ -1,4 +1,4 @@
-package meal;
+package factory.meal;
 
 public interface Meal {
     String getDescription();

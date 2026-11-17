@@ -1,8 +1,8 @@
-package notification;
+package observer.listener;
 
-import order.Order;
-import order.OrderObserver;
-import order.OrderStatus;
+import builder.Order;
+import observer.OrderObserver;
+import builder.OrderStatus;
 
 public class KitchenDisplay implements OrderObserver {
     @Override

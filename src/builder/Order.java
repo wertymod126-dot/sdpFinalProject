@@ -1,6 +1,7 @@
-package order;
+package builder;
 
-import meal.Meal;
+import observer.OrderObserver;
+import factory.meal.Meal;
 
 import java.util.ArrayList;
 import java.util.Collections;

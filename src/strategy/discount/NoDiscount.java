@@ -1,4 +1,6 @@
-package pricing;
+package strategy.discount;
+
+import strategy.DiscountStrategy;
 
 public class NoDiscount implements DiscountStrategy {
     @Override

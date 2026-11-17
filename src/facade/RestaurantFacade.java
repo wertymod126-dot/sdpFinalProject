@@ -1,19 +1,19 @@
 package facade;
 
-import meal.Meal;
-import meal.MealFactory;
-import notification.CustomerNotifier;
-import notification.KitchenDisplay;
-import order.Order;
-import order.OrderBuilder;
-import order.OrderStatus;
-import order.OrderType;
-import pricing.DiscountStrategy;
-import pricing.NoDiscount;
-import pricing.PercentageDiscount;
-import topping.Bacon;
-import topping.ExtraCheese;
-import topping.Mushrooms;
+import factory.meal.Meal;
+import factory.MealFactory;
+import observer.listener.CustomerNotifier;
+import observer.listener.KitchenDisplay;
+import builder.Order;
+import builder.OrderBuilder;
+import builder.OrderStatus;
+import builder.OrderType;
+import strategy.DiscountStrategy;
+import strategy.discount.NoDiscount;
+import strategy.discount.PercentageDiscount;
+import decorator.topping.Bacon;
+import decorator.topping.ExtraCheese;
+import decorator.topping.Mushrooms;
 
 import java.util.LinkedHashMap;
 import java.util.List;

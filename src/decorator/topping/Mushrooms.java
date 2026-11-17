@@ -1,6 +1,7 @@
-package topping;
+package decorator.topping;
 
-import meal.Meal;
+import decorator.ToppingDecorator;
+import factory.meal.Meal;
 
 public class Mushrooms extends ToppingDecorator {
     private static final double PRICE = 1.50;
